@@ -11,10 +11,16 @@ export async function GET() {
     );
   }
 
+  // Use firstName and lastName or a fallback for username
+  const username =
+    user.firstName && user.lastName
+      ? `${user.firstName} ${user.lastName}`
+      : user.emailAddresses?.[0]?.emailAddress || "No username";
+
   return NextResponse.json(
     {
       message: "Authenticated",
-      data: { userId: user.id, username: user.name },
+      data: { userId: user.id, username },
     },
     { status: 200 }
   );
