@@ -4,7 +4,7 @@ import React from "react";
 import { useUser } from "@clerk/nextjs";
 
 const ClientPage = () => {
-  const { isSignedIn, user, isLoaded } = useUser();
+  const { user, isLoaded } = useUser();
 
   if (!isLoaded) {
     return null;

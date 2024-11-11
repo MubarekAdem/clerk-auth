@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useUser, UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
-  const { isSignedIn, user } = useUser();
+  const { isSignedIn } = useUser();
 
   return (
     <div className="bg-cyan-950 rounded-b-xl">
